@@ -1,4 +1,4 @@
-# <img src="logo.svg" alt="Windy logo" height="40" align="top"> Windy – Runtime-based Tailwind CSS
+# <img src="logo.png" alt="Windy logo" height="40" align="top"> Windy – Runtime-based Tailwind CSS
 
 No time to explain, code is worth a thousand words.
 
