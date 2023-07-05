@@ -81,7 +81,7 @@ function buildRule(mods, semantic, sel, styles) {
 }
 
 function buildSelector(sts, semantic, sel) {
-  return `.${sel}`;
+  return `.${CSS.escape(sel)}${sts.length ? `:${sts.join(':')}` : ''}`;
 }
 
 function buildPropertyLines(styles) {
@@ -109,11 +109,11 @@ function parseMods(xs) {
     }
 
     if (parseMods.specialStates[x]) {
-      sts.push([x, parseMods.specialStates[x]]);
+      sts.push(parseMods.specialStates[x]);
       continue;
     }
 
-    sts.push([x, x]);
+    x !== 'base' && sts.push(x);
   }
 
   return { bp, bpid, sts };
@@ -131,6 +131,6 @@ parseMods.specialStates = {
   'group-hover': 'hover',
 };
 
-windy('MyComponent', 'font-semibold md:hover:italic');
+windy('font-semibold md:hover:italic');
 
-export default windy;
+//export default windy;
